@@ -1,5 +1,6 @@
 FROM gradle:7.5.1-jdk17-alpine AS build
 COPY . .
+RUN chmod 777 ./gradlew
 RUN ./gradlew build --no-daemon
 
 FROM eclipse-temurin:17-jdk-alpine
